@@ -1,0 +1,148 @@
+/*
+===========================================
+CONSTRUCTION TECH PORTFOLIO - GLOBAL STYLES
+===========================================
+
+Design System:
+- Primary Color: Blue (#0284c7) - Trust, professionalism, technology
+- Accent Color: Orange (#f97316) - Innovation, energy, construction
+- Typography: Inter (body), Poppins (headings)
+- Design Philosophy: Modern, clean, professional with strategic animations
+- Responsive: Mobile-first approach with fluid breakpoints
+
+Animation Strategy:
+- Subtle entrance animations for sections
+- Hover effects on interactive elements
+- Scroll-triggered reveals for engagement
+- Performance-optimized (GPU-accelerated transforms)
+
+Component Architecture:
+- Modular, reusable components
+- Consistent spacing scale (4px base)
+- Accessible color contrast ratios
+- Touch-friendly target sizes (44px min)
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-poppins: 'Poppins', sans-serif;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold
+           transition-all duration-300 hover:bg-primary-700 hover:shadow-lg
+           hover:scale-105 active:scale-95 focus:outline-none focus:ring-4
+           focus:ring-primary-300;
+  }
+
+  .btn-secondary {
+    @apply bg-accent-600 text-white px-8 py-3 rounded-lg font-semibold
+           transition-all duration-300 hover:bg-accent-700 hover:shadow-lg
+           hover:scale-105 active:scale-95 focus:outline-none focus:ring-4
+           focus:ring-accent-300;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-600 px-8 py-3 rounded-lg
+           font-semibold transition-all duration-300 hover:bg-primary-600
+           hover:text-white hover:shadow-lg focus:outline-none focus:ring-4
+           focus:ring-primary-300;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300
+           hover:shadow-2xl hover:-translate-y-1;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-gray-900 mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-gray-600 max-w-3xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+
+  .skill-badge {
+    @apply bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm
+           font-semibold transition-all duration-300 hover:bg-primary-600
+           hover:text-white cursor-default;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0284c7;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0369a1;
+}
+
+/* Selection */
+::selection {
+  background-color: #0284c7;
+  color: white;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
